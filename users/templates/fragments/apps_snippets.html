@@ -1,0 +1,7 @@
+{% load static %}
+
+{% if config %}
+    {% for item in config %}
+        {% include item with data=data %}
+    {% endfor %}
+{% endif %}

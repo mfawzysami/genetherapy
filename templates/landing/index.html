@@ -101,31 +101,31 @@
                 <div class='container'>
                     <div class='row'>
                         <div class='col-lg-3 col-md-6 mb40 text-center feature-icon wow fadeInUp' data-wow-delay='.1s'>
-                            <i class='icon-laptop-phone'></i>
-                            <h4>Responsive layouts</h4>
+                            <img src="{% static 'icons/virus.png' %}" style="margin-bottom:40px">
+                            <h4>Viral Vectors</h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetu do eiusmod tempor incididunt labore.
+                                Search for Viral Vectors and understand the engineering tricks behind their modifications
                             </p>
                         </div><!--col-->
                         <div class='col-lg-3 col-md-6 mb40 text-center feature-icon wow fadeInUp' data-wow-delay='.2s'>
-                            <i class='icon-new-tab'></i>
-                            <h4>Over 400+ Layouts</h4>
+                            <img src="{% static 'icons/nonviral.png' %}" style="margin-bottom:40px">
+                            <h4>Synthetic Polymers</h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetu do eiusmod tempor incididunt labore.
+                                Browse all non-viral vectors, including liposomes, synthetic polymers and targetted proteins.
                             </p>
                         </div><!--col-->
                         <div class='col-lg-3 col-md-6 mb40 text-center feature-icon wow fadeInUp' data-wow-delay='.3s'>
-                            <i class='icon-graph'></i>
-                            <h4>Admin Dashboard</h4>
+                            <img src="{% static 'icons/transgene.png' %}" style="margin-bottom:40px">
+                            <h4>Expression Cassettes</h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetu do eiusmod tempor incididunt labore.
+                                Browse thousands of targetted therapeutic Expression Cassettes for specific hereditary as well as non-hereditary diseases.
                             </p>
                         </div><!--col-->
                         <div class='col-lg-3 col-md-6 mb40 text-center feature-icon wow fadeInUp' data-wow-delay='.4s'>
-                            <i class='icon-palette'></i>
-                            <h4>Built in SASS</h4>
+                            <img src="{% static 'icons/part.png' %}" style="margin-bottom:40px">
+                            <h4>Therapeutic Parts</h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetu do eiusmod tempor incididunt labore.
+                                Browse thousands of biological parts acting as hot plug-n-play components that could be used in your next gene therapy experiment.
                             </p>
                         </div><!--col-->
                     </div>
@@ -135,10 +135,11 @@
                 <div class='container pt90 pb50'>
                     <div class='row align-items-center'>
                         <div class='col-lg-5 mb40'>
-                            <h6 class="text-dark-gray">Sub title lorem ipsum</h6>
-                            <h3 class='title-font mb20'>Take it anywhere</h3>
+                            <h6 class="text-dark-gray">Share Your...</h6>
+                            <h3 class='title-font mb20'>Therapeutic Component</h3>
                             <p class='lead'>
-                                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                                You can easily share your amazingly engineered therapeutic component with the rest of the world. The components range from the simplest bio-parts including regulatory regions, parts of regulatory regions, promoter sequences and enhancers to the most complicated whole viral or non-viral vectors with complete expression cassettes containing the therapeutic transgene.
+
                             </p>
                         </div>
                         <div class='col-lg-6 ml-auto mb40 wow fadeInUp' data-wow-delay=".1s">
@@ -154,12 +155,12 @@
                             <img src='{% static 'assets/images/Graphic-representation-of-annotated-plasmids-pIS15-43-and-pIS04-68-GC-content-is_W640.jpg' %}' alt='' class='img-fluid'>
                         </div>
                         <div class='col-lg-5 mr-auto mb40'>
-                            <h6 class="text-dark-gray">Another sub title</h6>
-                            <h3 class='title-font mb20'>Looks great on all mobile devices</h3>
+                            <h6 class="text-dark-gray">Simply Design...</h6>
+                            <h3 class='title-font mb20'>Expression Cassette</h3>
                             <p class='lead'>
-                                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                                You can easily build your expression cassette for the next gene therapy experiment from smaller pluggable biological parts within the platform.
                             </p>
-                            <a href="#" class="btn btn-outline-success">Explore Demos</a>
+                            <a href="#" class="btn btn-outline-success">Read More</a>
                         </div>
 
                     </div>
@@ -170,10 +171,10 @@
                     <div class='row align-items-center'>
                         <div class='col-lg-5 ml-auto mb40'>
 
-                            <h6 class="text-dark-gray">Well documented and clean coded</h6>
-                            <h3 class='title-font mb20'>Developers friendly code</h3>
+                            <h6 class="text-dark-gray">Well documented and clean services</h6>
+                            <h3 class='title-font mb20'>Developers friendly services</h3>
                             <p class='lead'>
-                                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                                You can now easily integrate our database into your product through developers friendly Restful APIs
                             </p>
                             <a href="https://www.youtube.com/watch?v=xKerTa8yLRM" class="btn btn-outline-dark modal-video"><i class="icon-play-circle"></i>Watch Video</a>
                         </div>
@@ -185,13 +186,13 @@
             </div><!--feature-->
 
 
-            <section class="bg-parallax pt100 pb100" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg2.jpg")'>
+            <section class="bg-parallax pt100 pb100" data-jarallax='{"speed": 0.2}' style='background-image: url("{% static 'landing/images/bg2.jpg' %}")'>
                 <div class="parallax-overlay"></div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 mr-auto ml-auto text-center wow zoomInDown" data-wow-delay=".1s">
-                            <h2 class="text-white-gray mb30">Sign Up for a  <span class="text-white">14 days free</span> trial No credit card required.</h2>
-                            <a href="#" class="btn btn-white-outline modal-video">Watch Video</a>
+                            <h2 class="text-white-gray mb30">Sign Up <span class="text-white">Now</span> It's free.</h2>
+                            <a href="{% url 'users:register' %}" class="btn btn-white-outline">Sign Up.</a>
                         </div>
                     </div>
                 </div>
@@ -241,12 +242,6 @@
                     </div>
                 </div>
             </section>
-            <div class="container pt90 pb90 text-center">
-                <h6 class="text-dark-gray">Easily copy and paste any section from over 1000+ Components</h6>
-                <h3 class="h2 mb40">Need more content here?</h3>
-                <a href="#" class="btn btn-outline-primary btn-lg">Buy Main Template</a>
-            </div><!--Call to action-->
-
             <section id="subscribe" class="bg-parallax pt100 pb100" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg3.jpg")'>
                 <div class="parallax-overlay"></div>
                 <div class="container">

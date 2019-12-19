@@ -1,0 +1,36 @@
+{% load static %}
+
+<div id="headerbar">
+	  <div class="container-fluid">
+		<div class="row">
+            <div class="col-xs-6 col-sm-2">
+                <a href="{{ request.BASE_COMMON_PATH }}performance/checks/list/" class="shortcut-tiles tiles-midnightblue">
+                    <div class="tiles-body">
+                            <div class="pull-left"><i class="fa fa-laptop"></i></div>
+                        </div>
+                        <div class="tiles-footer">
+                            Performance
+                        </div>
+                </a>
+            </div>
+
+          {% if request.apps %}
+             {% for app_name , config in request.apps.items %}
+                 <div class="col-xs-6 col-sm-2">
+                    <a href="/apps/{{ config.name|lower }}/" class="shortcut-tiles tiles-midnightblue">
+                        <div class="tiles-body">
+                            <div class="pull-left"><i class="fa fa-cog"></i></div>
+                        </div>
+                        <div class="tiles-footer">
+                            {{ config.name }}
+                        </div>
+                    </a>
+                 </div>
+
+             {% endfor %}
+          {% endif %}
+
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+{% load static %}
+ <div class="widget stay-on-collapse" id="fixed_sidebar">
+        <span class="widget-heading">Web</span>
+        <nav role="navigation" class="widget-body">
+            <ul class="acc-menu">
+                <li>
+                     <a href="javascript:;"><i class="fa fa-laptop"></i><span>Performance Monitoring</span></a>
+                        <ul class="acc-menu">
+                            <li>
+                                <a href="{{ request.BASE_COMMON_PATH }}performance/checks/list/">List Checks</a>
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </nav>
+</div>

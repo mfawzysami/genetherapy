@@ -1,0 +1,14 @@
+{% load static %}
+<div class="widget stay-on-collapse">
+        <div class="widget-body welcome-box tabular">
+            <div class="tabular-row">
+                <div class="tabular-cell welcome-avatar">
+                    <a href="#"><img src="{% static 'assets/demo/avatar/default.png' %}" class="avatar"></a>
+                </div>
+                <div class="tabular-cell welcome-options">
+                    <span class="welcome-text">Welcome,</span>
+                    <a href="#" class="name">{{ request.user.first_name }} {{ request.user.last_name }}</a>
+                </div>
+            </div>
+        </div>
+</div>

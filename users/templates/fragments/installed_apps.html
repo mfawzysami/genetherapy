@@ -1,0 +1,15 @@
+{% load static %}
+ {% if request.apps %}
+     {% for app_name , config in request.apps.items %}
+         <li>
+                <a href="javascript:;"><i class="fa fa-columns"></i><span>{{ config.display_name|title }}</span></a>
+                <ul class="acc-menu">
+                   {% for route_name , route_def in config.routes.items %}
+                        <li>
+                            <a href="{{ request.BASE_COMMON_PATH }}apps/{{ config.name|lower }}{{ route_def.url }}">{{ route_def.display_name }}</a>
+                        </li>
+                   {% endfor %}
+                </ul>
+        </li>
+     {% endfor %}
+{% endif %}
