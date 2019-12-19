@@ -1,19 +1,31 @@
 {% load static %}
-{% load staticfiles %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="coming-soon">
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Gene Therapy - Recover Account Password</title>
-	{% include 'common/headerscripts.html' %}
-    <script type="text/javascript" src="{% static 'assets/js/plugins/notifications/pnotify.min.js' %}"></script>
+    <meta charset="utf-8">
+    <title>Login - Gene Therapy</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="description" content="Gene Therapy">
+    <meta name="author" content="Cliniome">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link href="{% static 'assets/plugins/iCheck/skins/minimal/blue.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'assets/fonts/font-awesome/css/font-awesome.min.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'assets/css/styles.css' %}" type="text/css" rel="stylesheet">
+
+
+    <!--[if lt IE 9]>
+        <link href="assets/css/ie8.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+     <script type="text/javascript" src="{% static 'assets/js/plugins/notifications/pnotify.min.js' %}"></script>
     <script type="application/javascript">
-        $(function(){
+        document.ready(function(){
             {% for message in messages %}
                 new PNotify({
                             title: 'Gene Therapy - Notification',
@@ -34,85 +46,54 @@
         });
     </script>
 
-</head>
+    </head>
 
-<body class="login-container">
+    <body class="focused-form">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
 
-	<!-- Main navbar -->
-	<div class="navbar navbar-inverse">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="{% url 'home' %}">Gene Therapy</a>
+  ga('create', 'UA-44426473-3', 'auto');
+  ga('send', 'pageview');
+</script>
 
-			<ul class="nav navbar-nav pull-right visible-xs-block">
-				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
-			</ul>
-		</div>
+<div class="container" id="login-form">
+	<a href="/" class="login-logo"><img src="{% static 'assets/img/logo.png' %}"></a>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h2>Forgot Password - Gene Therapy</h2></div>
+				<div class="panel-body">
+                    {% for message in messages %}
+                            <div class="alert alert-success" role="alert">
+                                {{ message }}
+                            </div>
+                    {% endfor %}
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <div class="panel panel-body login-form">
+                                <div class="text-center">
+                                    <div class="icon-object border-warning text-warning"><i class="icon-spinner11"></i></div>
+                                    <h5 class="content-group">Password recovery <small class="display-block">We'll send you instructions in email</small></h5>
+                                </div>
 
-		<div class="navbar-collapse collapse" id="navbar-mobile">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="{% url 'home' %}">
-						<i class="icon-display4"></i> <span class="visible-xs-inline-block position-right"> Go to website</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- /main navbar -->
+                                <div class="form-group has-feedback">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Your email">
+                                    <div class="form-control-feedback">
+                                        <i class="icon-mail5 text-muted"></i>
+                                    </div>
+                                </div>
 
-
-	<!-- Page container -->
-	<div class="page-container">
-
-		<!-- Page content -->
-		<div class="page-content">
-
-			<!-- Main content -->
-			<div class="content-wrapper">
-
-				<!-- Content area -->
-				<div class="content">
-
-					<!-- Password recovery -->
-					<form method="post" action="">
-                        {% csrf_token %}
-						<div class="panel panel-body login-form">
-							<div class="text-center">
-								<div class="icon-object border-warning text-warning"><i class="icon-spinner11"></i></div>
-								<h5 class="content-group">Password recovery <small class="display-block">We'll send you instructions in email</small></h5>
-							</div>
-
-							<div class="form-group has-feedback">
-								<input type="email" id="email" name="email" class="form-control" placeholder="Your email">
-								<div class="form-control-feedback">
-									<i class="icon-mail5 text-muted"></i>
-								</div>
-							</div>
-
-							<button type="submit" class="btn bg-blue btn-block">Reset password <i class="icon-arrow-right14 position-right"></i></button>
-						</div>
-					</form>
-					<!-- /password recovery -->
-
-
-					<!-- Footer -->
-					<div class="text-center center-align center-block">
-                        {% include 'common/pageFooter.html' %}
-                    </div>
-					<!-- /footer -->
-
+                                <button type="submit" class="btn bg-blue btn-block">Reset password <i class="icon-arrow-right14 position-right"></i></button>
+                            </div>
+                        </form>
 				</div>
-				<!-- /content area -->
-
 			</div>
-			<!-- /main content -->
-
 		</div>
-		<!-- /page content -->
-
 	</div>
-	<!-- /page container -->
-
-</body>
-
+</div>
+    {% include 'sections/footer_scripts.html' %}
+    </body>
 </html>
