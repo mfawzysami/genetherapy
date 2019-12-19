@@ -109,7 +109,7 @@ class UserController(object):
         }
         template = get_template('emails/forgot-password-email.html')
         html_message = template.render(current_context)
-        send_email_msg.delay(subject="CyberWatch - Forgot Password Email", message=html_message,
+        send_email_msg.delay(subject="GeneTherapy - Forgot Password Email", message=html_message,
                              recipient_list=[current_user.email], html_message=True)
         return True
 
@@ -162,7 +162,7 @@ class UserController(object):
         }
         template = get_template('emails/account_activation_email.html')
         html_message = template.render(current_context)
-        send_email_msg.delay(subject="CyberWatch - Account Activation Email", message=html_message,
+        send_email_msg.delay(subject="GeneTherapy - Account Activation Email", message=html_message,
                              recipient_list=[current_user.email], html_message=True)
 
 
