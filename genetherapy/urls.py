@@ -17,9 +17,11 @@ from django.conf.urls import url , include
 from django.contrib import admin
 from .views import home
 from users.urls import users_patterns
+from components.urls import urlpatterns as componentpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',home,name="home"),
-    url(r'^account/',include(users_patterns,namespace="users"))
+    url(r'^account/',include(users_patterns,namespace="users")),
+    url(r'^components/',include(componentpatterns,namespace="components"))
 ]

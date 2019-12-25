@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'users',
     'widget_tweaks',
     'captcha',
+    'components',
+    'api'
 ]
 
 MIDDLEWARE = [
