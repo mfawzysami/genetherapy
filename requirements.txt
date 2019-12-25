@@ -44,6 +44,8 @@ django-url-filter==0.3.2
 django-widget-tweaks==1.4.1
 djangorestframework==3.6.3
 djangorestframework-bulk==0.2.1
+elasticsearch==6.3.1
+elasticsearch-dsl==6.3.1
 enum34==1.1.6
 et-xmlfile==1.0.1
 idna==2.8

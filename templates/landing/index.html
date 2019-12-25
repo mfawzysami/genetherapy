@@ -10,6 +10,7 @@
         <link href="{% static 'landing/css/plugins/plugins.css' %}" rel="stylesheet">
         <link href="{% static 'landing/linearicons/fonts.css' %}" rel="stylesheet">
         <link href="{% static 'landing/css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'landing/css/searchbox.css' %}" rel="stylesheet">
     </head>
 
     <body data-spy="scroll" data-target="#landingkit-navbar" data-offset="74">
@@ -48,7 +49,7 @@
                             <a class="nav-link" data-scroll href="#features">How It Works</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-scroll href="#faqs">Faqs</a>
+                            <a class="nav-link" data-scroll href="#search">Search</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-scroll href="#subscribe">Subscribe</a>
@@ -59,6 +60,9 @@
                     </ul>
                     <ul class="navbar-nav ml-auto navbar-right">
                        {% if request.user.is_authenticated %}
+                           <li class="nav-item">
+                                <a class="nav-link btn btn-primary" target="_blank" href="#"><i class="fa fa-2x fa-plus-circle"> <span>Add</span></i> </a>
+                           </li>
                          <li class="nav-item dropdown">
                             <span class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                  My Account
@@ -203,49 +207,12 @@
                     </div>
                 </div>
             </section>
-            <section id="faqs" class="border-btm1">
+            <section id="search" class="border-btm1">
                 <div class="container pt90 pb50">
 
-                    <h6 class="text-dark-gray text-center">Frequently asked questions</h6>
-                    <h3 class="title-font mb70 text-center">Faqs</h3>
-                    <div class="row">
-                        <div class="col-lg-4 mb40 wow fadeInUp" data-wow-delay=".1s">
-                            <h5 class="mb10">How to install a template <i class="icon-bubble-question"></i></h5>
-                            <p>
-                                Nullam fringilla tristique elit id varius. Nulla lacinia quam nec venenatis dignissim. Vivamus volutpat tempus semper. Cras feugiat mi sit amet risus consectetur.
-                            </p>
-                        </div><!--faq col-->
-                        <div class="col-lg-4 mb40 wow fadeInUp" data-wow-delay=".15s">
-                            <h5 class="mb10">How to change site logo <i class="icon-bubble-question"></i></h5>
-                            <p>
-                                Nullam fringilla tristique elit id varius. Nulla lacinia quam nec venenatis dignissim. Vivamus volutpat tempus semper. Cras feugiat mi sit amet risus consectetur.
-                            </p>
-                        </div><!--faq col-->
-                        <div class="col-lg-4 mb40 wow fadeInUp" data-wow-delay=".2s">
-                            <h5 class="mb10">Is all templates are responsive <i class="icon-bubble-question"></i></h5>
-                            <p>
-                                Nullam fringilla tristique elit id varius. Nulla lacinia quam nec venenatis dignissim. Vivamus volutpat tempus semper. Cras feugiat mi sit amet risus consectetur.
-                            </p>
-                        </div><!--faq col-->
-                        <div class="col-lg-4 mb40 wow fadeInUp" data-wow-delay=".25s">
-                            <h5 class="mb10">Is all future updates are free <i class="icon-bubble-question"></i></h5>
-                            <p>
-                                Nullam fringilla tristique elit id varius. Nulla lacinia quam nec venenatis dignissim. Vivamus volutpat tempus semper. Cras feugiat mi sit amet risus consectetur.
-                            </p>
-                        </div><!--faq col-->
-                        <div class="col-lg-4 mb40 wow fadeInUp" data-wow-delay=".3s">
-                            <h5 class="mb10">Can i change footer copyright text <i class="icon-bubble-question"></i></h5>
-                            <p>
-                                Nullam fringilla tristique elit id varius. Nulla lacinia quam nec venenatis dignissim. Vivamus volutpat tempus semper. Cras feugiat mi sit amet risus consectetur.
-                            </p>
-                        </div><!--faq col-->
-                        <div class="col-lg-4 mb40 wow fadeInUp" data-wow-delay=".35s">
-                            <h5 class="mb10">How to get support <i class="icon-bubble-question"></i></h5>
-                            <p>
-                                Nullam fringilla tristique elit id varius. Nulla lacinia quam nec venenatis dignissim. Vivamus volutpat tempus semper. Cras feugiat mi sit amet risus consectetur.
-                            </p>
-                        </div><!--faq col-->
-                    </div>
+                    <h6 class="text-dark-gray text-center">Search For</h6>
+                    <h3 class="title-font mb70 text-center">Components</h3>
+                    {% include 'fragments/searchbox.html' %}
                 </div>
             </section>
             <section id="subscribe" class="bg-parallax pt100 pb100" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg3.jpg")'>

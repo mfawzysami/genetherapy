@@ -1,0 +1,23 @@
+{
+  "title":"second Component",
+  "description":"This is the description of the second component",
+  "full_description":"This is the full description of the first component",
+  "insertion_date":"25/12/2019",
+  "modified_date":"25/11/2019",
+  "last_accessed":"25/11/2019",
+  "author":{
+    "full_name":"Serene Fawzy",
+    "user_id":"1",
+    "username":"serene",
+  },
+  "rating_count":"3",
+  "views_count":"2",
+  "type":"component",
+  "sections":[
+    {
+      "title":"Introduction",
+      "description":"Short description about the second Component",
+      "value":"This is the introduction about the second component"
+    }
+  ]
+}
