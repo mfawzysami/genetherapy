@@ -5,6 +5,7 @@ class CoreDBManager(object):
 
     def __init__(self):
         self.db_helper = MongoDBHelper()
+        self.db_helper.connect()
         self.indexer = ElasticSearchHelper()
 
     def insert(self,db_name,collection_name,component):
@@ -17,7 +18,11 @@ class CoreDBManager(object):
         if inserted_id:
             component['id'] = str(inserted_id)
             component['doc_id'] = str(inserted_id)
-            self.indexer.index(component)
+            del component['_id']
+            try:
+                self.indexer.index(component)
+            except Exception as e:
+                pass
         return inserted_id is not None , inserted_id
 
     def delete(self,db_name,collection_name,component_id):

@@ -7,6 +7,8 @@ class MongoDBHelper(object):
         self.host = env.get_item("mongodb","host")
         self.port = int(env.get_item("mongodb","port"))
 
+
+
     def connect(self):
         self.client = db.MongoClient(host=self.host,port=self.port)
 

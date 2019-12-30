@@ -31,3 +31,10 @@ class User(AbstractUser):
 
     def get_user_full_name(self):
         return "{0} {1}".format(self.first_name,self.last_name)
+
+    def get_user_details(self):
+        return {
+            "full_name" : "{0} {1}".format(self.first_name,self.last_name),
+            "user_id" : self.id,
+            "username" : self.username
+        }
