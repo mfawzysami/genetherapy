@@ -4,19 +4,23 @@
 
 <head>
     <meta charset="utf-8" />
+    <link href="{% static 'components/css/2.1fb3f7c4.chunk.css' %}" rel="stylesheet">
+
     <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{% static 'components/css/splitpane.css' %}">
     <link rel="stylesheet" href="{% static 'components/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'components/css/components.css' %}">
     <script type="application/javascript" src="{% static 'components/js/jquery-3.2.1.min.js' %}"></script>
     <script type="application/javascript" src="{% static 'components/js/bootstrap.js' %}"></script>
+    <script src="{% static 'components/js/2.52e39491.chunk.js' %}"></script>
+    <script src="{% static 'components/js/main.ce043835.chunk.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'components/css/components.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.2/dist/loadingoverlay.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <title>Gene Therapy Platform</title>
-    <link href="{% static 'components/css/2.1fb3f7c4.chunk.css' %}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -35,11 +39,11 @@
                                  <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Title</label>
-                                            <input type="text" class="form-control"  value="{{ data.title }}" id="component_title" name="component_title"/>
+                                            <input type="text" class="form-control"  required value="{{ data.title }}" id="component_title" name="component_title"/>
                                         </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Component Type</label>
-                                        <select class="form-control" id="component_type" name="component_type">
+                                        <select required class="form-control" id="component_type" name="component_type">
                                             <option value="genomic_part">Genomic General Part</option>
                                             <option value="protein_peptide">Short Peptide Part</option>
                                             <option value="expression_cassette">Expression Cassette</option>
@@ -52,10 +56,8 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label class="control-label">Description</label>
-                                            <textarea id="component_description" name="component_description"
-                                                      cols="8" rows="5" class="form-control">
-                                                {{ data.description }}
-                                            </textarea>
+                                            <textarea id="component_description" name="component_description" required="required"
+                                                      cols="8" rows="5" class="form-control">{{ data.description }}</textarea>
                                         </div>
                                  </div>
                                 <div id="root" class="loader" style="width: 100%;height:600px;"></div>
@@ -148,8 +150,7 @@
         f()
     }([])
 </script>
-<script src="{% static 'components/js/2.52e39491.chunk.js' %}"></script>
-<script src="{% static 'components/js/main.ce043835.chunk.js' %}"></script>
+
 </body>
 
 </html>

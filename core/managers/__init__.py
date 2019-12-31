@@ -1,5 +1,7 @@
 from core.db import MongoDBHelper
 from core.indexing import ElasticSearchHelper
+from core.tasks import perform_indexing
+
 
 class CoreDBManager(object):
 
@@ -20,9 +22,10 @@ class CoreDBManager(object):
             component['doc_id'] = str(inserted_id)
             del component['_id']
             try:
-                self.indexer.index(component)
+                perform_indexing.delay(component)
             except Exception as e:
                 pass
+
         return inserted_id is not None , inserted_id
 
     def delete(self,db_name,collection_name,component_id):
